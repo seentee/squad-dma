@@ -1,0 +1,12 @@
+{
+  "mapID": ["Kohat"],
+  "x": 2040,
+  "y": 2040,
+  "scale": 0.008876,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Kohat.png"
+    }
+  ]
+}

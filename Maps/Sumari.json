@@ -1,0 +1,12 @@
+{
+  "mapID": ["Sumari"],
+  "x": 2015,
+  "y": 1410.91,
+  "scale": 0.0314879,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Sumari.png"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mapID": ["Lashkar"],
+  "x": 2047,
+  "y": 2047.5,
+  "scale": 0.00946,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Lashkar.png"
+    }
+  ]
+}

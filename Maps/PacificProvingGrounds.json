@@ -1,0 +1,12 @@
+{
+  "mapID": ["PacificProvingGrounds"],
+  "x": 2048,
+  "y": 2049,
+  "scale": 0.010158,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\PacificProvingGrounds.png"
+    }
+  ]
+}

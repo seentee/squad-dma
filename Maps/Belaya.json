@@ -1,0 +1,12 @@
+{
+  "mapID": ["Belaya"],
+  "x": 2045,
+  "y": 2179,
+  "scale": 0.01035,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Belaya.png"
+    }
+  ]
+}

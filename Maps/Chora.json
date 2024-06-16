@@ -1,0 +1,12 @@
+{
+  "mapID": ["Chora"],
+  "x": 2483.5,
+  "y": 2686,
+  "scale": 0.010085,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Chora.png"
+    }
+  ]
+}

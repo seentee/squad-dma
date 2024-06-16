@@ -1,0 +1,12 @@
+{
+  "mapID": ["Mutaha"],
+  "x": 1390,
+  "y": 1694.9,
+  "scale": 0.01487,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Mutaha.png"
+    }
+  ]
+}

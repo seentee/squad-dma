@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+Dumps/** merge=ours
+Maps/** merge=ours
+*.dll merge=ours
+.gitattributes merge=ours

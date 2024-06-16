@@ -1,0 +1,12 @@
+{
+  "mapID": ["Kokan"],
+  "x": 1765,
+  "y": 1764,
+  "scale": 0.0164,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Kokan.png"
+    }
+  ]
+}

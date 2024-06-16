@@ -1,0 +1,12 @@
+{
+  "mapID": ["Fallujah"],
+  "x": 1791.8,
+  "y": 2106,
+  "scale": 0.01363,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Fallujah.png"
+    }
+  ]
+}

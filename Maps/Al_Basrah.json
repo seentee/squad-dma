@@ -1,0 +1,12 @@
+{
+  "mapID": ["AlBasrah"],
+  "x": 2048,
+  "y": 2048,
+  "scale": 0.0135,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Al_Basrah.png"
+    }
+  ]
+}

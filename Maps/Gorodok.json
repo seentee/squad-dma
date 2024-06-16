@@ -1,0 +1,12 @@
+{
+  "mapID": ["Gorodok"],
+  "x": 2047.5,
+  "y": 2048,
+  "scale": 0.01007,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Gorodok.png"
+    }
+  ]
+}

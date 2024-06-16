@@ -1,0 +1,12 @@
+{
+  "mapID": ["Skorpo"],
+  "x": 2048.5,
+  "y": 2047.68,
+  "scale": 0.00539,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Skorpo.png"
+    }
+  ]
+}

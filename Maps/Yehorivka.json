@@ -1,0 +1,12 @@
+{
+  "mapID": ["Yehorivka"],
+  "x": 2129,
+  "y": 2130,
+  "scale": 0.0065,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Yehorivka.png"
+    }
+  ]
+}

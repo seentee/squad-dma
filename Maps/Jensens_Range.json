@@ -1,0 +1,12 @@
+{
+  "mapID": ["Jensens_Range"],
+  "x": 2047.3,
+  "y": 2048,
+  "scale": 0.010224,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Jensens_Range.png"
+    }
+  ]
+}

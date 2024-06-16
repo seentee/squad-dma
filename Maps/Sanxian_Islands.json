@@ -1,0 +1,12 @@
+{
+  "mapID": ["Sanxian_Islands"],
+  "x": 2048,
+  "y": 1824.6,
+  "scale": 0.0089,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Sanxian_Islands.png"
+    }
+  ]
+}

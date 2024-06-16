@@ -1,0 +1,12 @@
+{
+  "mapID": ["Logar_Valley"],
+  "x": 2050,
+  "y": 2633,
+  "scale": 0.02325,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Logar_Valley.png"
+    }
+  ]
+}

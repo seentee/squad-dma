@@ -1,0 +1,12 @@
+{
+  "mapID": ["Fools_Road"],
+  "x": 3048,
+  "y": 3021,
+  "scale": 0.0225,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Fools_Road.png"
+    }
+  ]
+}
