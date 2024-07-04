@@ -7,6 +7,10 @@ namespace squad_dma
     /// </summary>
     public static class Extensions
     {
+        private static SKPaint textOutlinePaint = null;
+        private static SKPaint projectilePaint = null;
+        private static Dictionary<Team, SKPaint> teamEntityPaints = [];
+        private static Dictionary<Team, SKPaint> teamTextPaints = [];
         private static readonly Dictionary<Team, SKColor> TeamColors = new(){
             {Team.RU, new SKColor(0, 255, 0)},
             {Team.US, new SKColor(255, 0, 0)},
@@ -71,8 +75,12 @@ namespace squad_dma
         /// Gets drawing paintbrush based on Player Type
         /// </summary>
         public static SKPaint GetEntityPaint(this UActor actor) {
+            if (teamEntityPaints.TryGetValue(actor.Team, out SKPaint value)) {
+                return value;
+            }
             SKPaint basePaint = SKPaints.PaintBase.Clone();
             basePaint.Color = TeamColors[actor.Team];
+            teamEntityPaints[actor.Team] = basePaint;
             return basePaint;
         }
 
@@ -81,9 +89,40 @@ namespace squad_dma
         /// </summary>
         public static SKPaint GetTextPaint(this UActor actor)
         {
+            if (teamTextPaints.TryGetValue(actor.Team, out SKPaint value)) {
+                return value;
+            }
             SKPaint baseText = SKPaints.TextBase.Clone();
             baseText.Color = TeamColors[actor.Team];
+            teamTextPaints[actor.Team] = baseText;
             return baseText;
+        }
+
+        /// <summary>
+        /// Gets projectile drawing paintbrush
+        /// </summary>
+        public static SKPaint GetProjectilePaint(this UActor actor) {
+            if (projectilePaint != null) {
+                return projectilePaint;
+            }
+            SKPaint basePaint = SKPaints.PaintBase.Clone();
+            basePaint.Color = new SKColor(255, 0, 255);
+            projectilePaint = basePaint;
+            return basePaint;
+        }
+
+        /// <summary>
+        /// Determines the text outline color.
+        /// </summary>
+        public static SKPaint GetTextOutlinePaint()
+        {
+            if (textOutlinePaint != null) {
+                return textOutlinePaint;
+            }
+            SKPaint paintToUse = SKPaints.TextBaseOutline.Clone();
+            paintToUse.Color = new SKColor(0, 0, 0);
+            textOutlinePaint = paintToUse;
+            return paintToUse;
         }
         #endregion
     }

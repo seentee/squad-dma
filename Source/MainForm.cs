@@ -662,11 +662,13 @@ namespace squad_dma
                 if (actor.ErrorCount > 10)
                     lines[0] = "ERROR"; // In case POS stops updating, let us know!
 
-                actorZoomedPos.DrawActorText(
-                    canvas,
-                    actor,
-                    lines
-                );
+                if (actor.ActorType != ActorType.Projectile) {
+                    actorZoomedPos.DrawActorText(
+                        canvas,
+                        actor,
+                        lines
+                    );
+                }
 
                 if (actor.ActorType == ActorType.Player) {
                     actorZoomedPos.DrawPlayerMarker(
@@ -674,6 +676,8 @@ namespace squad_dma
                         actor,
                         aimlineLength
                     );
+                } else if (actor.ActorType == ActorType.Projectile) {
+                    actorZoomedPos.DrawProjectile(canvas, actor);
                 } else {
                     actorZoomedPos.DrawTechMarker(canvas, actor);
                 }

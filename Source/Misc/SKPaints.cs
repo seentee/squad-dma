@@ -28,7 +28,7 @@ namespace squad_dma
         {
             Style = SKPaintStyle.Stroke,
             Color = SKColors.Black,
-            StrokeWidth = 2,
+            StrokeWidth = 1,
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,

@@ -63,6 +63,15 @@ namespace squad_dma
             canvas.DrawLine(this.GetPoint(), this.GetAimlineEndpoint(radians, aimlineLength), paint);
         }
         /// <summary>
+        /// Draws a Projectile on this location.
+        /// </summary>
+        public void DrawProjectile(SKCanvas canvas, UActor projectile)
+        {
+            SKPaint paint = projectile.GetProjectilePaint();
+
+            canvas.DrawCircle(this.GetPoint(), 4 * UIScale, paint);
+        }
+        /// <summary>
         /// Draws a Tech Marker on this location.
         /// </summary>
         public void DrawTechMarker(SKCanvas canvas, UActor actor)
@@ -107,7 +116,7 @@ namespace squad_dma
             {
                 var coords = this.GetPoint(9 * UIScale, spacing);
 
-                // canvas.DrawText(line, coords, Extensions.GetTextOutlinePaint());
+                canvas.DrawText(line, coords, Extensions.GetTextOutlinePaint());
                 canvas.DrawText(line, coords, text);
                 spacing += 12 * UIScale;
             }

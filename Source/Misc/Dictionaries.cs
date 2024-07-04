@@ -170,16 +170,16 @@ namespace squad_dma {
             {"BP_Tigr_RWS_Desert_C", ActorType.JeepRWSTurret},
             {"BP_Tigr_RWS_C", ActorType.JeepRWSTurret},
             
-            {"BP_BRDM-2_C", ActorType.APC},
+            {"BP_BRDM-2_C", ActorType.JeepRWSTurret},
             {"BP_BRDM-2_Spandrel_C", ActorType.JeepAntitank},
-            {"BP_BRDM-2_RUS_C", ActorType.APC},
-            {"BP_BRDM-2_RUS_Desert_C", ActorType.APC},
+            {"BP_BRDM-2_RUS_C", ActorType.JeepRWSTurret},
+            {"BP_BRDM-2_RUS_Desert_C", ActorType.JeepRWSTurret},
             {"BP_BRDM-2_Spandrel_RUS_C", ActorType.JeepAntitank},
             {"BP_BRDM-2_Spandrel_RUS_Desert_C", ActorType.JeepAntitank},
-            {"BP_BRDM-2_MIL_C", ActorType.APC},
-            {"BP_BRDM-2_Insurgents_C", ActorType.APC},
+            {"BP_BRDM-2_MIL_C", ActorType.JeepRWSTurret},
+            {"BP_BRDM-2_Insurgents_C", ActorType.JeepRWSTurret},
             {"BP_BRDM-2_Spandrel_INS_C", ActorType.JeepAntitank},
-            {"BP_BRDM-2_MEA_C", ActorType.APC},
+            {"BP_BRDM-2_MEA_C", ActorType.JeepRWSTurret},
             {"BP_BRDM-2_MEA_Spandrel_C", ActorType.JeepAntitank},
             
             {"BP_Cobra2_M2_Desert_C", ActorType.JeepTurret},
@@ -228,13 +228,15 @@ namespace squad_dma {
             {"BP_LAV_RWS_M2_Desert_C", ActorType.APC},
             {"BP_LAV_RWS_M2_C", ActorType.APC},
             
-            {"BP_M1064A3_M121_C", ActorType.APC},
-            {"BP_M1064A3_M121_Desert_C", ActorType.APC},
+            {"BP_M1064A3_M121_C", ActorType.TrackedAPC},
+            {"BP_M1064A3_M121_Desert_C", ActorType.TrackedAPC},
             
             {"BP_M113A3_C6_Desert_C", ActorType.TrackedJeep},
             {"BP_M113A3_C6_C", ActorType.TrackedJeep},
-            {"BP_M113A3_MK19_Desert_C", ActorType.TrackedAPCArtillery},
-            {"BP_M113A3_MK19_Desert_Cage_C", ActorType.TrackedAPCArtillery},
+            {"BP_M113A3_MK19_C", ActorType.TrackedAPC},
+            {"BP_M113A3_MK19_Desert_C", ActorType.TrackedAPC},
+            {"BP_M113A3_MK19_Desert_Cage_C", ActorType.TrackedAPC},
+            {"BP_M1064_M121_TLF_C", ActorType.TrackedAPCArtillery},
             {"BP_M1064_M121_TLF_Desert_C", ActorType.TrackedAPCArtillery},
             {"BP_M113A3_M2_Desert_C", ActorType.TrackedJeep},
             {"BP_M113A3_M2_C", ActorType.TrackedJeep},
@@ -442,6 +444,7 @@ namespace squad_dma {
             {"BP_MI8_VDV_C", ActorType.TransportHelicopter},
             
             {"BP_UH60_C", ActorType.TransportHelicopter},
+            {"BP_UH60_TLF_PKM_C", ActorType.TransportHelicopter},
             {"BP_UH60_CAS_C", ActorType.AttackHelicopter},
             {"BP_UH60_M134_C", ActorType.TransportHelicopter},
             {"BP_UH60_AUS_C", ActorType.TransportHelicopter},
@@ -555,6 +558,11 @@ namespace squad_dma {
             {"BP_Deployable_M15Mine_C", ActorType.Mine},
             {"BP_Deployable_Type72Mine_C", ActorType.Mine},
             {"BP_Deployable_TM62Mine_C", ActorType.Mine},
+
+            {"BP_Mortarround4_C", ActorType.Projectile},
+            {"BP_Mortarround_SMOKE2_C", ActorType.Projectile},
+            {"BP_Projectile_Hell_Cannon_C", ActorType.Projectile},
+            {"BP_S5_Proj2_C", ActorType.Projectile},
         };
 
         public static readonly Dictionary<ActorType, Bitmap> BitMaps = new(){
