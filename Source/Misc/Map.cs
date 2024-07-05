@@ -29,6 +29,8 @@ namespace squad_dma
         /// </summary>
         public float Height = 0;
 
+        private Dictionary<ActorType, SKBitmap> skBitMaps = [];
+
         private Config _config
         {
             get => Program.Config;
@@ -77,15 +79,21 @@ namespace squad_dma
         public void DrawTechMarker(SKCanvas canvas, UActor actor)
         {
             var scale = 0.2f;
-            Bitmap bitmap = Names.BitMaps.GetValueOrDefault(actor.ActorType, null);
-            if (bitmap == null) {
-                return;
-            }
             if (actor.ActorType == ActorType.Mine) {
                 scale /= 1.5f;
             }
 
-            var icon = SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(bitmap);
+            if (!skBitMaps.TryGetValue(actor.ActorType, out SKBitmap skBitMap)) {
+                Bitmap bitmap = Names.BitMaps.GetValueOrDefault(actor.ActorType, null);
+                if (bitmap == null) {
+                    return;
+                }
+
+                skBitMap = SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(bitmap);
+                skBitMaps[actor.ActorType] = skBitMap;
+            }
+            var icon = skBitMap;
+
             var iconWidth = icon.Width * scale;
             var iconHeight = icon.Height * scale;
             var point = this.GetPoint();

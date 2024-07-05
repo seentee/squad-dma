@@ -563,6 +563,7 @@ namespace squad_dma {
             {"BP_Mortarround_SMOKE2_C", ActorType.Projectile},
             {"BP_Projectile_Hell_Cannon_C", ActorType.Projectile},
             {"BP_S5_Proj2_C", ActorType.Projectile},
+            {"BP_BM21_Rocket_Proj2_C", ActorType.Projectile},
         };
 
         public static readonly Dictionary<ActorType, Bitmap> BitMaps = new(){

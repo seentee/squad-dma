@@ -150,7 +150,7 @@ namespace squad_dma
             try
             {
                 _gameWorld = Memory.ReadPtr(_squadBase + Offsets.GameObjects.GWorld);
-                // Program.Log($"Found Game World at 0x{_gameWorld:X}");
+                // Program.Log($"Found Game World at 0x{_gameWorld:X},\n0x{_gameWorld + 0x00F8:X}=0x16,\n0x{_gameWorld + 0x0158:X}=0x28,\n0x{_gameWorld + 0x01A8:X}=0x50,\n0x{_gameWorld + 0x0270:X}=0x370,\n0x{_gameWorld + 0x05E8:X}=0x90,\n0x{_gameWorld + 0x06D0:X}=0xC8");
                 return true;
             }
             catch (DMAShutdown) { throw; }
@@ -270,10 +270,11 @@ namespace squad_dma
                 var cameraInfoRound = cameraInfoScatterMap.AddRound();
                 
                 var cameraManagerPtr = cameraManagerRound.AddEntry<ulong>(0, 0, _playerController + Offsets.PlayerController.PlayerCameraManager);
-                var sceneComponent = cameraManagerRound.AddEntry<ulong>(0, 3, _playerController + Offsets.PlayerController.SceneComponentTransform);
+                cameraManagerRound.AddEntry<int>(0, 11, _gameWorld + Offsets.World.WorldOrigin);
+                cameraManagerRound.AddEntry<int>(0, 12, _gameWorld + Offsets.World.WorldOrigin + 0x4);
+                cameraManagerRound.AddEntry<int>(0, 13, _gameWorld + Offsets.World.WorldOrigin + 0x8);
                 cameraInfoRound.AddEntry<Vector3>(0, 1, cameraManagerPtr, null, Offsets.Camera.CameraLocation);
                 cameraInfoRound.AddEntry<Vector3>(0, 2, cameraManagerPtr, null, Offsets.Camera.CameraRotation);
-                cameraInfoRound.AddEntry<Vector3>(0, 4, sceneComponent, null, Offsets.USceneComponent.RelativeLocation);
                 
                 cameraInfoScatterMap.Execute();
 
@@ -283,8 +284,11 @@ namespace squad_dma
                 if (!cameraInfoScatterMap.Results[0][2].TryGetResult<Vector3>(out var rotation)) {
                     return false;
                 }
-                if (cameraInfoScatterMap.Results[0][4].TryGetResult<Vector3>(out var transformLocation)) {
-                    _absoluteLocation = -transformLocation;
+                if (cameraInfoScatterMap.Results[0][11].TryGetResult<int>(out var absoluteX)
+                && cameraInfoScatterMap.Results[0][12].TryGetResult<int>(out var absoluteY)
+                && cameraInfoScatterMap.Results[0][13].TryGetResult<int>(out var absoluteZ)) {
+                    _absoluteLocation = new Vector3(absoluteX, absoluteY, absoluteZ);
+                    // Program.Log(_absoluteLocation.ToString());
                 }
                 _localUPlayer.Position = location;
                 _localUPlayer.Rotation = new Vector2(rotation.Y, rotation.X);

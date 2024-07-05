@@ -14,6 +14,7 @@
         public const uint GameState = 0x120;
         public const uint Levels = 0x138;
         public const uint OwningGameInstance = 0x180;
+        public const uint WorldOrigin = 0x5B8; // 0x5B8 or 0x5C4
     }
 
     public struct GameInstance
