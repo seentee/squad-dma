@@ -1,0 +1,12 @@
+{
+  "mapID": ["GE_Manicouagan"],
+  "x": 2048,
+  "y": 2047.8,
+  "scale": 0.01016,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Manicouagan.png"
+    }
+  ]
+}

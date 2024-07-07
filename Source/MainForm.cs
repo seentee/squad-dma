@@ -522,10 +522,10 @@ namespace squad_dma
             float zoomHeight = bitmap.Height * zoomFactor;
 
             var bounds = new SKRect(
-                localPlayerPos.X - zoomWidth / 2,
-                localPlayerPos.Y - zoomHeight / 2,
-                localPlayerPos.X + zoomWidth / 2,
-                localPlayerPos.Y + zoomHeight / 2
+                Math.Max(Math.Min(localPlayerPos.X, bitmap.Width - zoomWidth / 2) - zoomWidth / 2, 0),
+                Math.Max(Math.Min(localPlayerPos.Y, bitmap.Height - zoomHeight / 2)  - zoomHeight / 2, 0),
+                Math.Min(Math.Max(localPlayerPos.X, zoomWidth / 2) + zoomWidth / 2, bitmap.Width),
+                Math.Min(Math.Max(localPlayerPos.Y, zoomHeight / 2) + zoomHeight / 2, bitmap.Height)
             ).AspectFill(_mapCanvas.CanvasSize);
 
             return new MapParameters
@@ -932,7 +932,7 @@ namespace squad_dma
             try
             {
                 SKCanvas canvas = e.Surface.Canvas;
-                canvas.Clear();
+                canvas.Clear(new SKColor(picOtherPrimaryDark.BackColor.R, picOtherPrimaryDark.BackColor.G, picOtherPrimaryDark.BackColor.B));
 
                 UpdateWindowTitle();
 

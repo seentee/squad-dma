@@ -1,0 +1,12 @@
+{
+  "mapID": ["GE_Narva"],
+  "x": 2032,
+  "y": 2049.8,
+  "scale": 0.0146,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Narva.png"
+    }
+  ]
+}

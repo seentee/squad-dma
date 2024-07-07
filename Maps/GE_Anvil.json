@@ -1,0 +1,12 @@
+{
+  "mapID": ["GE_Anvil"],
+  "x": 2732,
+  "y": 2732,
+  "scale": 0.0134,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Anvil.png"
+    }
+  ]
+}

@@ -108,11 +108,14 @@ namespace squad_dma
                     }
                 }
                 var names = Memory.GetNamesById([.. actorBaseWithName.Values.Distinct()]);
-                // foreach (var item in names) {
-                //     if (item.Value.Contains("M121")) {
-                //         Program.Log(item.Key + " " + item.Value);
-                //     }
-                // }
+                foreach (var item in names) {
+                    if (item.Value.Contains("BP_UAF")) {
+                        names[item.Key] = item.Value.Replace("BP_UAF", "BP_Soldier_UAF");
+                    }
+                    // if (item.Value.Contains("M1A2")) {
+                    //     Program.Log(item.Key + " " + item.Value);
+                    // }
+                }
                 var playersNameIDs = names.Where(x => x.Value.StartsWith("BP_Soldier") || Names.TechNames.ContainsKey(x.Value)).ToDictionary<uint, string>().ToDictionary();
                 var filteredActors = actorBaseWithName.Where(actor => playersNameIDs.ContainsKey(actor.Value)).Select(actor => actor.Key).ToList();
                 count = filteredActors.Count;

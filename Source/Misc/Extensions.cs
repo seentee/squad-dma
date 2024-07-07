@@ -22,7 +22,11 @@ namespace squad_dma
             {Team.TR, new SKColor(64, 224, 208)},
             {Team.INS, new SKColor(173, 115, 0)},
             {Team.IMF, new SKColor(0, 64, 79)},
-            {Team.Unknown, new SKColor(255, 255, 255)}
+            {Team.Unknown, new SKColor(255, 255, 255)},
+            {Team.GE_Wagner, new SKColor(128, 128, 128)},
+            {Team.GE_UA, new SKColor(255, 255, 0)},
+            {Team.GE_FI, new SKColor(0, 47, 108)},
+            {Team.GE_IS, new SKColor(0, 56, 184)},
         };
         #region Generic Extensions
         /// <summary>

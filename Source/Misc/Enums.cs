@@ -51,6 +51,10 @@ namespace squad_dma {
         TR,
         INS,
         IMF,
-        Unknown
+        Unknown,
+        GE_Wagner,
+        GE_UA,
+        GE_FI,
+        GE_IS
     }
 }

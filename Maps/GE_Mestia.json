@@ -1,0 +1,12 @@
+{
+  "mapID": ["GE_Mestia"],
+  "x": 2048,
+  "y": 1878,
+  "scale": 0.017,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Mestia.png"
+    }
+  ]
+}

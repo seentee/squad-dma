@@ -1,0 +1,12 @@
+{
+  "mapID": ["GE_BlackCoast"],
+  "x": 2047.8,
+  "y": 1894.53,
+  "scale": 0.008915,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\Black_Coast.png"
+    }
+  ]
+}
