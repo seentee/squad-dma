@@ -29,13 +29,6 @@ namespace squad_dma
         /// </summary>
         public float Height = 0;
 
-        private Dictionary<ActorType, SKBitmap> skBitMaps = [];
-
-        private Config _config
-        {
-            get => Program.Config;
-        }
-
         /// <summary>
         /// Get exact player location (with optional X,Y offsets).
         /// </summary>
@@ -83,14 +76,8 @@ namespace squad_dma
                 scale /= 1.5f;
             }
 
-            if (!skBitMaps.TryGetValue(actor.ActorType, out SKBitmap skBitMap)) {
-                Bitmap bitmap = Names.BitMaps.GetValueOrDefault(actor.ActorType, null);
-                if (bitmap == null) {
-                    return;
-                }
-
-                skBitMap = SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(bitmap);
-                skBitMaps[actor.ActorType] = skBitMap;
+            if (!Names.BitMaps.TryGetValue(actor.ActorType, out SKBitmap skBitMap)) {
+                return;
             }
             var icon = skBitMap;
 

@@ -1,0 +1,12 @@
+{
+  "mapID": ["GE_GooseBay"],
+  "x": 2048.5,
+  "y": 2049,
+  "scale": 0.01016,
+  "mapLayers": [
+    {
+      "minHeight": -30000,
+      "filename": "Maps\\GooseBay.png"
+    }
+  ]
+}

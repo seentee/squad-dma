@@ -316,11 +316,11 @@ namespace squad_dma
             while (_mapCanvas.GRContext is null)
                 await Task.Delay(1);
 
-            _mapCanvas.GRContext.SetResourceCacheLimit(503316480); // Fixes low FPS on big maps
+            _mapCanvas.GRContext.SetResourceCacheLimit(1610612736); // Fixes low FPS on big maps
 
             while (true)
             {
-                await Task.Run(() => Thread.SpinWait(50000)); // High performance async delay
+                await Task.Run(() => Thread.SpinWait(25000)); // High performance async delay
                 _mapCanvas.Refresh(); // draw next frame
             }
         }
@@ -403,7 +403,7 @@ namespace squad_dma
                 if (_fpsWatch.ElapsedMilliseconds >= 1000)
                 {
                     // RE-ENABLE & EXPLORE WHAT THIS DOES
-                    //_mapCanvas.GRContext.PurgeResources(); // Seems to fix mem leak issue on increasing resource cache
+                    _mapCanvas.GRContext.PurgeResources(); // Seems to fix mem leak issue on increasing resource cache
 
                     #region Radar Stats
                     var fps = _fps;
@@ -429,7 +429,7 @@ namespace squad_dma
         private void UpdateSelectedMap()
         {
             string currentMap = this.MapName;
-            string currentMapPrefix = currentMap.ToLower().Substring(0, Math.Min(4, currentMap.Length));
+            string currentMapPrefix = currentMap.ToLower().Substring(0, Math.Min(6, currentMap.Length));
 
             if (_selectedMap is null || !_selectedMap.MapID.ToLower().StartsWith(currentMapPrefix))
             {

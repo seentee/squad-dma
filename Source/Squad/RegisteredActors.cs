@@ -7,7 +7,6 @@ namespace squad_dma
 {
     public class RegistredActors
     {
-        private readonly ulong _base;
         private readonly ulong _persistentLevel;
         private ulong _actorsArray;
         private readonly Stopwatch _regSw = new();
@@ -109,22 +108,16 @@ namespace squad_dma
                 }
                 var names = Memory.GetNamesById([.. actorBaseWithName.Values.Distinct()]);
                 foreach (var item in names) {
-                    if (item.Value.Contains("BP_UAF")) {
+                    if (item.Value.StartsWith("BP_UAF")) {
                         names[item.Key] = item.Value.Replace("BP_UAF", "BP_Soldier_UAF");
                     }
-                    // if (item.Value.Contains("M1A2")) {
+                    // if (item.Value.Contains("Cougar")) {
                     //     Program.Log(item.Key + " " + item.Value);
                     // }
                 }
-                var playersNameIDs = names.Where(x => x.Value.StartsWith("BP_Soldier") || Names.TechNames.ContainsKey(x.Value)).ToDictionary<uint, string>().ToDictionary();
+                var playersNameIDs = names.Where(x => x.Value.StartsWith("BP_Soldier") || Names.TechNames.ContainsKey(x.Value)).ToDictionary();
                 var filteredActors = actorBaseWithName.Where(actor => playersNameIDs.ContainsKey(actor.Value)).Select(actor => actor.Key).ToList();
                 count = filteredActors.Count;
-                // Program.Log(count.ToString());
-                // foreach (var name in playersNameIDs) {
-                //     if (name.Value.Contains("Mine")) {
-                //         Program.Log(name.Value);
-                //     }
-                // }
                 for (int i = 0; i < count; i++) {
                     var actorAddr = filteredActors[i];
                     var nameId = actorBaseWithName[actorAddr];
@@ -132,7 +125,7 @@ namespace squad_dma
                     var team = Team.Unknown;
                     var actorType = Names.TechNames.GetValueOrDefault(actorName, ActorType.Player);
                     if (actorType == ActorType.Player) {
-                        team = Names.Teams.GetValueOrDefault(actorName.Substring(0, 14), Team.Unknown);
+                        team = Names.Teams.GetValueOrDefault(actorName[..14], Team.Unknown);
                     }
                     if (_actors.TryGetValue(actorAddr, out var actor)) {
                         if (actor.ErrorCount > 50) {
@@ -234,7 +227,8 @@ namespace squad_dma
                         actor.Rotation = new Vector2(rotation.Y, rotation.X);
                     }
                 }
-            } catch (GameEnded ex) {
+            } catch (GameEnded)
+            {
                 throw;
             }
             catch (Exception ex)
