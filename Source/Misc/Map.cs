@@ -85,7 +85,7 @@ namespace squad_dma
             var iconHeight = icon.Height * scale;
             var point = this.GetPoint();
             var rotation = actor.Rotation.X + 90;
-            if (actor.ActorType == ActorType.FOBRadio || actor.ActorType == ActorType.Hab || actor.ActorType == ActorType.Mine) {
+            if (Names.DoNotRotate.Contains(actor.ActorType)) {
                 rotation = 0;
             } else if (Names.RotateBy45Degrees.Contains(actor.ActorType)) {
                 rotation -= 45;

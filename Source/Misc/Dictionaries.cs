@@ -570,6 +570,8 @@ namespace squad_dma {
             {"BP_BM21_Rocket_Proj2_C", ActorType.Projectile},
             {"BP_40MM_MK19_Proj_C", ActorType.Projectile},
             {"BP_Mortarround_120mm_C", ActorType.Projectile},
+            
+            {"BP_SquadRallyPoint_C", ActorType.RallyPoint},
 
             // Global Escalation
             {"BP_UAZ_VAN_C", ActorType.JeepLogistics},
@@ -655,6 +657,7 @@ namespace squad_dma {
             {ActorType.JeepTurret, SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(Properties.Resources.JeepTurret)},
             {ActorType.Mine, SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(Properties.Resources.Mine)},
             {ActorType.Motorcycle, SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(Properties.Resources.Motorcycle)},
+            {ActorType.RallyPoint, SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(Properties.Resources.RallyPoint)},
             {ActorType.Tank, SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(Properties.Resources.Tank)},
             {ActorType.TankMGS, SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(Properties.Resources.TankMGS)},
             {ActorType.TrackedAPC, SkiaSharp.Views.Desktop.Extensions.ToSKBitmap(Properties.Resources.TrackedAPC)},
@@ -704,6 +707,13 @@ namespace squad_dma {
             ActorType.DeployableHMG,
             ActorType.DeployableMortars,
             ActorType.DeployableRockets,
+        ];
+
+        public static readonly HashSet<ActorType> DoNotRotate = [
+            ActorType.Hab,
+            ActorType.FOBRadio,
+            ActorType.Mine,
+            ActorType.RallyPoint
         ];
     }
     
