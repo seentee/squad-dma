@@ -977,14 +977,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1653, 852);
             Controls.Add(tabControlMain);
-            DrawerShowIconsWhenHidden = true;
-            DrawerTabControl = tabControlMain;
-            DrawerWidth = 180;
-            FormStyle = FormStyles.ActionBar_None;
             Margin = new Padding(4, 3, 4, 3);
             Name = "frmMain";
             Padding = new Padding(0, 24, 0, 0);
-            Text = "d";
+            Text = "Squad";
             Shown += frmMain_Shown;
             tabSettings.ResumeLayout(false);
             tabControlSettings.ResumeLayout(false);

@@ -34,7 +34,7 @@ namespace squad_dma {
                     ApplicationConfiguration.Initialize();
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(true);
-                    Application.Run(new frmMain());
+                    Application.Run(new frmMainOld());
                 }
             }
             catch (Exception ex)

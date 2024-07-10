@@ -270,7 +270,7 @@ namespace squad_dma
                             Memory.GameStatus = Game.GameStatus.Menu;
                             Memory._ready = true;
                             Memory._game.WaitForGame();
-                            while (Memory.GameStatus == Game.GameStatus.InGame)
+                            while (Memory.GameStatus == Game.GameStatus.InGame && _running)
                             {
                                 if (Memory._tickSw.ElapsedMilliseconds >= 1000)
                                 {
