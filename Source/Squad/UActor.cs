@@ -57,9 +57,12 @@ namespace squad_dma
         public Vector2 ZoomedPosition { get; set; } = new();
         /// <summary>
         /// Player's Rotation (direction/pitch) in Local Game World.
-        /// 90 degree offset ~already~ applied to account for 2D-Map orientation.
         /// </summary>
         public Vector2 Rotation { get; set; } = new Vector2(0, 0); // 64 bits will be atomic
+        /// <summary>
+        /// Player's Rotation (direction/pitch) in Local Game World.
+        /// </summary>
+        public Vector3 Rotation3D { get; set; } = new Vector3(0, 0, 0);
         /// <summary>
         /// Consecutive number of errors that this Player object has 'errored out' while updating.
         /// </summary>

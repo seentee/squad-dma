@@ -113,6 +113,18 @@
         public const uint Health = 0x1DF8;
     }
 
+    public struct SQVehicle
+    {
+        public const uint Health = 0x830;
+        public const uint MaxHealth = 0x834;
+    }
+
+    public struct SQDeployable
+    {
+        public const uint Health = 0x374;
+        public const uint MaxHealth = 0x36C;
+    }
+
     public struct FString
     {
         public const uint Length = 0x8;

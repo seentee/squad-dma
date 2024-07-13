@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using squad_dma.Source;
 
 namespace squad_dma {
     static class Program {
@@ -33,8 +34,9 @@ namespace squad_dma {
                     RuntimeHelpers.RunClassConstructor(typeof(Memory).TypeHandle); // invoke static constructor
                     ApplicationConfiguration.Initialize();
                     Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(true);
+                    Application.SetCompatibleTextRenderingDefault(true);                    
                     Application.Run(new frmMainOld());
+                    // Application.Run(new MultiFormContext(new OverlayForm()));
                 }
             }
             catch (Exception ex)

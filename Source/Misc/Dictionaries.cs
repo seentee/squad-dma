@@ -590,6 +590,7 @@ namespace squad_dma {
             {"BP_SUV_CAR_C", ActorType.JeepTransport},
             {"BP_LUVW_M2_Child_Finland_C", ActorType.JeepTurret},
             {"BP_MATV_MINIGUN_ShadowCompany_C", ActorType.JeepTurret},
+            {"BP_TAPV_Child_Finland_C", ActorType.JeepRWSTurret},
             
             {"BP_BMP2M_Child_GE_C", ActorType.TrackedIFV},
             {"BP_BMP2M_Child_GE_WAGNER_C", ActorType.TrackedIFV},
@@ -610,6 +611,7 @@ namespace squad_dma {
             {"BP_US_Util_Black_Logi_C", ActorType.TruckLogistics},
             {"BP_FMTV_ARMED_LOGI_Black_del_C", ActorType.TruckLogistics},
             {"BP_FMTV_ARMED_LOGI_GREEN_US_C", ActorType.TruckLogistics},
+            {"BP_FMTV_ARMED_LOGI_C", ActorType.TruckLogistics},
             
             {"BP_MI8_VDV_GE_C", ActorType.TransportHelicopter},
             {"BP_MI8_Child_C", ActorType.TransportHelicopter},
@@ -620,11 +622,13 @@ namespace squad_dma {
             {"BP_Z8J_CAS_GE_C", ActorType.AttackHelicopter},
             {"BP_Z8G_Child_GE_C", ActorType.TransportHelicopter},
             {"BP_SA330_IDF_C", ActorType.TransportHelicopter},
+            {"BP_MRH90_CAS_Child_Finland_C", ActorType.TransportHelicopter},
             
             {"BP_BM21Grad_INS_GE_C", ActorType.TruckArtillery},
 
             {"BP_T72B3_Green_GE_WAGNER_C", ActorType.Tank},
             {"BP_MERKAVA_4_C", ActorType.Tank},
+            {"BP_2A6_Woodland_Child_Finland_C", ActorType.Tank},
 
             {"GE_RGF_Hab_C", ActorType.Hab},
             {"GE_NATO_Hab_C", ActorType.Hab},
@@ -710,6 +714,21 @@ namespace squad_dma {
         ];
 
         public static readonly HashSet<ActorType> DoNotRotate = [
+            ActorType.Hab,
+            ActorType.FOBRadio,
+            ActorType.Mine,
+            ActorType.RallyPoint
+        ];
+
+        public static readonly HashSet<ActorType> Deployables = [
+            ActorType.DeployableAntiAir,
+            ActorType.DeployableAntitank,
+            ActorType.DeployableAntitankGun,
+            ActorType.DeployableGMG,
+            ActorType.DeployableHellCannon,
+            ActorType.DeployableHMG,
+            ActorType.DeployableMortars,
+            ActorType.DeployableRockets,
             ActorType.Hab,
             ActorType.FOBRadio,
             ActorType.Mine,

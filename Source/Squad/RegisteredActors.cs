@@ -200,10 +200,19 @@ namespace squad_dma
                 
                 for (int i = 0; i < count; i++)
                 {
-                    var playerAddr = actorBases[i];
+                    var actorAddr = actorBases[i];
+                    var actorType = _actors[actorAddr].ActorType;
 
-                    var rootComponent = playerInstanceInfoRound.AddEntry<ulong>(i, 1, playerAddr + Offsets.Actor.RootComponent);
-                    var health = playerInstanceInfoRound.AddEntry<float>(i, 2, playerAddr + Offsets.ASQSoldier.Health);
+                    var rootComponent = playerInstanceInfoRound.AddEntry<ulong>(i, 1, actorAddr + Offsets.Actor.RootComponent);
+                    if (actorType == ActorType.Player) {
+                        var health = playerInstanceInfoRound.AddEntry<float>(i, 2, actorAddr + Offsets.ASQSoldier.Health);
+                    } else if (Names.Deployables.Contains(actorType)) {
+                        var health = playerInstanceInfoRound.AddEntry<float>(i, 2, actorAddr + Offsets.SQDeployable.Health);
+                        var maxHealth = playerInstanceInfoRound.AddEntry<float>(i, 3, actorAddr + Offsets.SQDeployable.MaxHealth);
+                    } else {
+                        var health = playerInstanceInfoRound.AddEntry<float>(i, 2, actorAddr + Offsets.SQVehicle.Health);
+                        var maxHealth = playerInstanceInfoRound.AddEntry<float>(i, 3, actorAddr + Offsets.SQVehicle.MaxHealth);
+                    }
 
                     var origin = instigatorAndRootRound.AddEntry<Vector3>(i, 4, rootComponent, null, Offsets.USceneComponent.RelativeLocation);
                     var rotation = instigatorAndRootRound.AddEntry<Vector3>(i, 5, rootComponent, null, Offsets.USceneComponent.RelativeRotation);
@@ -218,6 +227,10 @@ namespace squad_dma
                     if (playerInfoScatterMap.Results[i][2].TryGetResult<float>(out var hp)) {
                         actor.Health = hp;
                     }
+                    if (playerInfoScatterMap.Results[i].ContainsKey(3) && playerInfoScatterMap.Results[i][3].TryGetResult<float>(out var maxHp)) {
+                        actor.Health /= maxHp;
+                        actor.Health *= 100;
+                    }
 
                     if (playerInfoScatterMap.Results[i][4].TryGetResult<Vector3>(out var location)) {
                         actor.Position = location;
@@ -225,6 +238,7 @@ namespace squad_dma
 
                     if (playerInfoScatterMap.Results[i][5].TryGetResult<Vector3>(out var rotation)) {
                         actor.Rotation = new Vector2(rotation.Y, rotation.X);
+                        actor.Rotation3D = rotation;
                     }
                 }
             } catch (GameEnded)

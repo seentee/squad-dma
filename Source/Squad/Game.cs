@@ -292,6 +292,7 @@ namespace squad_dma
                 }
                 _localUPlayer.Position = location;
                 _localUPlayer.Rotation = new Vector2(rotation.Y, rotation.X);
+                _localUPlayer.Rotation3D = rotation;
                 return true;
             }
             catch (DMAShutdown) { throw; }
