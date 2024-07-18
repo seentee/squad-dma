@@ -646,8 +646,8 @@ namespace squad_dma
 
                 lines = new string[1] { $"{(int)Math.Round(height / 100)},{(int)Math.Round(dist / 100)}" };
 
-                // if (actor.ActorType == ActorType.Player)
-                lines[0] += $" ({(int)actor.Health})";
+                if (actor.ActorType != ActorType.RallyPoint)
+                    lines[0] += $" ({(int)actor.Health})";
                 if (actor.ErrorCount > 10)
                     lines[0] = "ERROR"; // In case POS stops updating, let us know!
 

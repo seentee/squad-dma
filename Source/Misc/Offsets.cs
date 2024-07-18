@@ -2,9 +2,9 @@
 {
     public struct GameObjects
     {
-        public const uint GObjects = 0x7164b00;
-        public const uint GNames = 0x7128580;
-        public const uint GWorld = 0x72a92e0;
+        public const uint GObjects = 0x7165b00;
+        public const uint GNames = 0x7129580;
+        public const uint GWorld = 0x72aa2e0;
     }
 
     public struct World
