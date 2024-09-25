@@ -700,6 +700,7 @@ namespace squad_dma {
             {"BP_Soldier_IDF", Team.GE_IS},
             {"BP_Soldier_Ham", Team.INS},
             {"BP_Soldier_BD_", Team.INS},
+            {"BP_Soldier_KON", Team.INS},
         };
 
         public static readonly HashSet<ActorType> RotateBy45Degrees = [
