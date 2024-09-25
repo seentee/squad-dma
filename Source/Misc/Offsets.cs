@@ -2,9 +2,9 @@
 {
     public struct GameObjects
     {
-        public const uint GObjects = 0x7165b00;
-        public const uint GNames = 0x7129580;
-        public const uint GWorld = 0x72aa2e0;
+        public const uint GObjects = 0x71cf4c0;
+        public const uint GNames = 0x7192f40;
+        public const uint GWorld = 0x7313ca0;
     }
 
     public struct World
@@ -115,8 +115,8 @@
 
     public struct SQVehicle
     {
-        public const uint Health = 0x830;
-        public const uint MaxHealth = 0x834;
+        public const uint Health = 0x868;
+        public const uint MaxHealth = 0x86C;
     }
 
     public struct SQDeployable

@@ -20,6 +20,8 @@ namespace squad_dma {
             {"BP_US_Util_USMC_Woodland_C", ActorType.TruckTransport},
             {"BP_USMC_Util_Desert_Logi_C", ActorType.TruckLogistics},
             {"BP_US_Util_USMC_Woodland_Logi_C", ActorType.TruckLogistics},
+            {"BP_WPMC_Util_Black_C", ActorType.TruckTransport},
+            {"BP_WPMC_Util_Black_Logi_C", ActorType.TruckLogistics},
             
             {"BP_CAF_Util_Desert_C", ActorType.TruckTransport},
             {"BP_CAF_Util_Woodland_C", ActorType.TruckTransport},
@@ -97,6 +99,12 @@ namespace squad_dma {
             {"BP_Technical_SPG9_INS_Armoured_C", ActorType.JeepAntitank},
             {"BP_Technical2Seater_White_SPG9_C", ActorType.JeepAntitank},
             {"BP_Technical_Logi_INS_Green_C", ActorType.JeepLogistics},
+            {"BP_Technical4Seater_M134_Grey_C", ActorType.JeepTurret},
+            {"BP_Technical4Seater_M134_Black_C", ActorType.JeepTurret},
+            {"BP_Technical4Seater_Logi_Black_C", ActorType.JeepLogistics},
+            {"BP_Technical2Seater_M2_Tan_C", ActorType.JeepTurret},
+            {"BP_Technical2Seater_Mortar_Tan_C", ActorType.JeepArtillery},
+            {"BP_Technical4Seater_Transport_Tan_C", ActorType.JeepTransport},
 
             {"BP_Safir_C", ActorType.JeepLogistics},
             {"BP_Safir_MG3_C", ActorType.JeepTurret},
@@ -131,6 +139,9 @@ namespace squad_dma {
             {"BP_M1151_TOW_Woodland_C", ActorType.JeepAntitank},
             {"BP_M1151_CROWS_C", ActorType.JeepRWSTurret},
             {"BP_M1151_CROWS_Woodland_C", ActorType.JeepRWSTurret},
+            {"BP_M1151_WPMC_C", ActorType.JeepTurret},
+            {"BP_M1151_M240_WPMC_C", ActorType.JeepTurret},
+            {"BP_M1151_TOW_WPMC_C", ActorType.JeepAntitank},
             
             {"BP_MATV_M240_C", ActorType.JeepTurret},
             {"BP_MATV_M240_Woodland_C", ActorType.JeepTurret},
@@ -208,6 +219,11 @@ namespace squad_dma {
             {"BP_CSK131_HJ-8ATGM_C", ActorType.JeepRWSTurret},
             {"BP_CSK131_HJ-8ATGM_Naval", ActorType.JeepRWSTurret},
             
+            {"BP_M1117_C", ActorType.JeepRWSTurret},
+            
+            {"BP_CPV_M134_C", ActorType.JeepTurret},
+            {"BP_CPV_Transport_Red_C", ActorType.JeepTransport},
+            
             {"BP_BTR80_RUS_Desert_C", ActorType.APC},
             {"BP_BTR80_RUS_C", ActorType.APC},
             {"BP_BTR80_INS_C", ActorType.APC},
@@ -256,6 +272,8 @@ namespace squad_dma {
             {"BP_M113A3_CAF_M2_C", ActorType.TrackedJeep},
             {"BP_M113A3_CAF_M2_Desert_C", ActorType.TrackedJeep},
             {"BP_M113A3_TLAV_C", ActorType.TrackedAPC},
+            {"BP_M113A3_WPMC_M2_C", ActorType.TrackedJeep},
+            {"BP_M113A3_MSV_WPMC_C", ActorType.TrackedJeep},
             
             {"BP_M113A2T_Logistics_TLF_C", ActorType.TrackedIFV},
             {"BP_M113A2T_Logistics_TLF_Desert_C", ActorType.TrackedIFV},
@@ -439,6 +457,7 @@ namespace squad_dma {
             
             {"BP_M60T_C", ActorType.Tank},
             {"BP_M60T_Desert_C", ActorType.Tank},
+            {"BP_M60T_WPMC_C", ActorType.Tank},
 
             {"BP_MI8_C", ActorType.TransportHelicopter},
             {"BP_MI8_CAS_C", ActorType.AttackHelicopter},
@@ -471,6 +490,10 @@ namespace squad_dma {
             {"BP_Z8G_C", ActorType.TransportHelicopter},
             {"BP_Z8J_C", ActorType.TransportHelicopter},
             {"BP_Z8J_CAS_C", ActorType.AttackHelicopter},
+            
+            {"BP_CH146_Raven_C", ActorType.TransportHelicopter},
+            {"BP_Loach_C", ActorType.TransportHelicopter},
+            {"BP_Loach_CAS_Small_C", ActorType.AttackHelicopter},
 
             {"BP_BM21Grad_MIL_C", ActorType.TruckArtillery},
             {"BP_BM21Grad_INS_C", ActorType.TruckArtillery},
@@ -689,6 +712,7 @@ namespace squad_dma {
             {"BP_Soldier_TLF", Team.TR},
             {"BP_Soldier_INS", Team.INS},
             {"BP_Soldier_IMF", Team.IMF},
+            {"BP_Soldiers_WP", Team.WPMC},
             
             {"BP_Soldier_Wag", Team.GE_Wagner},
             {"BP_Soldier_GE_", Team.RU},

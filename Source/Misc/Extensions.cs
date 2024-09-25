@@ -22,6 +22,7 @@ namespace squad_dma
             {Team.TR, new SKColor(64, 224, 208)},
             {Team.INS, new SKColor(173, 115, 0)},
             {Team.IMF, new SKColor(0, 64, 79)},
+            {Team.WPMC, new SKColor(128, 128, 128)},
             {Team.Unknown, new SKColor(255, 255, 255)},
             {Team.GE_Wagner, new SKColor(128, 128, 128)},
             {Team.GE_UA, new SKColor(255, 255, 0)},

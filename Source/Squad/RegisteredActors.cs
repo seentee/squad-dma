@@ -111,7 +111,7 @@ namespace squad_dma
                     if (item.Value.StartsWith("BP_UAF")) {
                         names[item.Key] = item.Value.Replace("BP_UAF", "BP_Soldier_UAF");
                     }
-                    // if (item.Value.Contains("Cougar")) {
+                    // if (item.Value.Contains("_Util")) {
                     //     Program.Log(item.Key + " " + item.Value);
                     // }
                 }
