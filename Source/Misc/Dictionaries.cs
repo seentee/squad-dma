@@ -222,6 +222,7 @@ namespace squad_dma {
             {"BP_M1117_C", ActorType.JeepRWSTurret},
             
             {"BP_CPV_M134_C", ActorType.JeepTurret},
+            {"BP_CPV_Transport_C", ActorType.JeepTransport},
             {"BP_CPV_Transport_Red_C", ActorType.JeepTransport},
             
             {"BP_BTR80_RUS_Desert_C", ActorType.APC},
@@ -529,6 +530,7 @@ namespace squad_dma {
             {"BP_FOBRadio_PLA_C", ActorType.FOBRadio},
             {"BP_FOBRadio_RGF_C", ActorType.FOBRadio},
             {"BP_FOBRadio_TLF_C", ActorType.FOBRadio},
+            {"BP_FOBRadio_WPMC_C", ActorType.FOBRadio},
 
             {"INS_Hab_C", ActorType.Hab},
             {"MEA_Hab_C", ActorType.Hab},
@@ -546,6 +548,7 @@ namespace squad_dma {
             {"PLA_Hab_Desert_C", ActorType.Hab},
             {"PLA_Hab_Winter_C", ActorType.Hab},
             {"PLA_Hab_C", ActorType.Hab},
+            {"WPMC_Hab_Forest_C", ActorType.Hab},
 
             {"BP_2b14podnosmortar_Deployable_C", ActorType.DeployableMortars},
             {"BP_81mmMortar_Deployable_C", ActorType.DeployableMortars},
