@@ -222,8 +222,11 @@ namespace squad_dma {
             {"BP_M1117_C", ActorType.JeepRWSTurret},
             
             {"BP_CPV_M134_C", ActorType.JeepTurret},
+            {"BP_CPV_M134_Red_C", ActorType.JeepTurret},
+            {"BP_CPV_M134_Blue_C", ActorType.JeepTurret},
             {"BP_CPV_Transport_C", ActorType.JeepTransport},
             {"BP_CPV_Transport_Red_C", ActorType.JeepTransport},
+            {"BP_CPV_Transport_Blue_C", ActorType.JeepTransport},
             
             {"BP_BTR80_RUS_Desert_C", ActorType.APC},
             {"BP_BTR80_RUS_C", ActorType.APC},
@@ -531,6 +534,7 @@ namespace squad_dma {
             {"BP_FOBRadio_RGF_C", ActorType.FOBRadio},
             {"BP_FOBRadio_TLF_C", ActorType.FOBRadio},
             {"BP_FOBRadio_WPMC_C", ActorType.FOBRadio},
+            {"BP_DestroyableObjective_C", ActorType.FOBRadio},
 
             {"INS_Hab_C", ActorType.Hab},
             {"MEA_Hab_C", ActorType.Hab},
@@ -549,6 +553,7 @@ namespace squad_dma {
             {"PLA_Hab_Winter_C", ActorType.Hab},
             {"PLA_Hab_C", ActorType.Hab},
             {"WPMC_Hab_Forest_C", ActorType.Hab},
+            {"WPMC_Hab_Desert_C", ActorType.Hab},
 
             {"BP_2b14podnosmortar_Deployable_C", ActorType.DeployableMortars},
             {"BP_81mmMortar_Deployable_C", ActorType.DeployableMortars},
@@ -606,25 +611,36 @@ namespace squad_dma {
             {"BP_UAZ_SPG9_Desert_C", ActorType.JeepAntitank},
             {"BP_Technical2Seater_White_Kornet_C", ActorType.JeepAntitank},
             {"BP_UAZ_JEEP_C", ActorType.JeepTransport},
+            {"BP_UAZ_PKM_DESERT_C", ActorType.JeepTurret},
             {"BP_M1117_Guardian_Woodland_C", ActorType.JeepRWSTurret},
             {"BP_MATV_MINIGUN_WOODLAND_C", ActorType.JeepTurret},
             {"BP_MATV_MINIGUN_C", ActorType.JeepTurret},
             {"BP__GE_Technical_Dshk_INS_Armoured_C", ActorType.JeepTurret},
             {"BP__GE_Technical_LOGI_INS_Armoured_C", ActorType.JeepLogistics},
+            {"BP_Technical4Seater_Logi_HEZBOLLAH_C", ActorType.JeepLogistics},
             {"BP_M1151_Light_IDF_C", ActorType.JeepTurret},
             {"BP_M1151_Technical_HAMAS_C", ActorType.JeepTurret},
             {"BP_SUV_CAR_C", ActorType.JeepTransport},
             {"BP_LUVW_M2_Child_Finland_C", ActorType.JeepTurret},
             {"BP_MATV_MINIGUN_ShadowCompany_C", ActorType.JeepTurret},
             {"BP_TAPV_Child_Finland_C", ActorType.JeepRWSTurret},
+            {"BP_PLF_MATV_Mk19_Woodland_C", ActorType.JeepArtillery},
+            {"BP_PLF_MATV_Woodland_C", ActorType.JeepTurret},
             
             {"BP_BMP2M_Child_GE_C", ActorType.TrackedIFV},
             {"BP_BMP2M_Child_GE_WAGNER_C", ActorType.TrackedIFV},
             {"BP_BMP2M_Child_GE_FDF_C", ActorType.TrackedIFV},
             {"BP_BMP2M_Desert_Child_GE_C", ActorType.TrackedIFV},
+            {"BP_BMP1_PLF_C", ActorType.TrackedIFV},
+            {"BP_PARS3_PLF_C", ActorType.IFV},
             {"BP_NAMER_IFV_C", ActorType.TrackedAPC},
             {"BP_APC_EITAN_M2_C", ActorType.APC},
             {"BP_BFV_Black_C", ActorType.TrackedIFV},
+            
+            {"BP_M113A3_CIWS-AA_Cage_GE_Woodland_C", ActorType.AntiAir},
+            {"BP_M113A3_CIWS-AA_Desert_Cage_GE_C", ActorType.AntiAir},
+            {"BP_Shilka_AA_C", ActorType.AntiAir},
+            {"BP_Shilka_AA_DESERT_C", ActorType.AntiAir},
 
             {"BP_FMTV_ARMED_LOGI_GREENWOODLAND_US_C", ActorType.TruckLogistics},
             {"BP_FMTV_ARMED_LOGI_IDF_C", ActorType.TruckLogistics},
@@ -649,6 +665,10 @@ namespace squad_dma {
             {"BP_Z8G_Child_GE_C", ActorType.TransportHelicopter},
             {"BP_SA330_IDF_C", ActorType.TransportHelicopter},
             {"BP_MRH90_CAS_Child_Finland_C", ActorType.TransportHelicopter},
+            {"BP_MI8_PLF_Child_C", ActorType.TransportHelicopter},
+            {"BP_Loach_CAS_Large_GE_C", ActorType.AttackHelicopter},
+            {"BP_GE_KA27_CAS_C", ActorType.AttackHelicopter},
+            {"BP_Loach_Child_GE_C", ActorType.AttackHelicopter},
             
             {"BP_BM21Grad_INS_GE_C", ActorType.TruckArtillery},
 
@@ -728,6 +748,8 @@ namespace squad_dma {
             {"BP_Soldier_Ham", Team.INS},
             {"BP_Soldier_BD_", Team.INS},
             {"BP_Soldier_KON", Team.INS},
+            {"BP_Soldier_Hez", Team.INS},
+            {"BP_Soldier_PLF", Team.IMF},
         };
 
         public static readonly HashSet<ActorType> RotateBy45Degrees = [
